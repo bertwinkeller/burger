@@ -1,12 +1,20 @@
+
+const {burger} = require('../controllers')
+
 module.exports = app => {
     // get all burgers
 app.get('/burgers', (req, res) => {
-res.send('Get all burgers')
+    burger.getBurgers(burger =>{
+    res.json(burger)
+    console.log(burger)
+    })
 })
 
     // post one burger
 app.post('/burgers', (req, res) => {
-res.send('Post one burger')
+    burger.addBurgers(req.body.name, req.body.eaten, () => { 
+        res.sendStatus(200)
+    })
 })
 
     // put one burger
@@ -18,4 +26,4 @@ res.send('Update one burger')
 app.delete('/burgers/:id', (req, res) => {
 res.send('Delete one burger')
 })
-}
+};
