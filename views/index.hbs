@@ -18,26 +18,34 @@
     </div>
     <div class="row">
         <div id="uneaten" class="col s4">
+            <h5 class="center-align">Uneaten Burgers</h5>
             {{#each burgers}}
             {{#unless eaten}}
             <div class="row card-panel">
                 <p>
-                    Burger: {{name}}
+                {{name}}
                 </p>
-                <p>
-                    Eaten: No
-                </p>
+            <div class="center-align">
+            <button class="btn-floating">
+            Eat
+            </button>
+            </div>
             </div>
             {{/unless}}
             {{/each}}
         </div>
         <div class="col s4"></div>
         <div id="eaten" class="col s4">
+            <h5 class="center-align">Eaten Burgers</h5>
             {{#each burgers}}
             {{#if eaten}}
             <div class="row card-panel">
-                <p>Burger: {{name}}</p>
-                <p>Eaten: Yes</p>
+            <p>{{name}}</p>
+            <div class="center-align">
+            <button class="btn-floating">
+            Eat
+            </button>
+            </div>
             </div>
             {{/if}}
             {{/each}}
