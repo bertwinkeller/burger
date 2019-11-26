@@ -2,11 +2,11 @@
     <div class="row">
         <form class="col s12">
             <div class="row">
-                <div class="col s8 input-field">
+                <div class="col s11 input-field">
                     <input type="text" class="validate" name="burger" id="burger">
                     <label for="burger">Burger</label>
                 </div>
-                <div class="col s4 input-field">
+                <div class="col s1 input-field">
                     <button class="btn-large">
                         <i class="material-icons">
                             add
@@ -17,24 +17,28 @@
         </form>
     </div>
     <div class="row">
-        <div id="uneaten" class="col s6">
-            {{#each}}
+        <div id="uneaten" class="col s4">
+            {{#each burgers}}
             {{#unless eaten}}
             <div class="row card-panel">
                 <p>
-                Burger: {{name}}
+                    Burger: {{name}}
                 </p>
                 <p>
-                Eaten: No
+                    Eaten: No
                 </p>
             </div>
             {{/unless}}
             {{/each}}
         </div>
-        <div id="eaten" class="col 26">
-            {{#each}}
+        <div class="col s4"></div>
+        <div id="eaten" class="col s4">
+            {{#each burgers}}
             {{#if eaten}}
-            
+            <div class="row card-panel">
+                <p>Burger: {{name}}</p>
+                <p>Eaten: Yes</p>
+            </div>
             {{/if}}
             {{/each}}
         </div>
