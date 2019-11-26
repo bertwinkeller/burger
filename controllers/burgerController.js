@@ -20,10 +20,21 @@ module.exports= {
             cb()
         })
     },
-    eatBurger(cb){
-cb()
+    eatBurger(id, cb){
+        db.query(`UPDATE burger SET eaten=true WHERE id = ${id}`, e => {
+            if(e) {
+                console.log(e)
+            }
+            cb()
+        })
     },
-    removeBurger(cb){
-cb()
+    removeBurger(id, cb){
+        db.query(`DELETE FROM burger WHERE id = ${id}`, e => {
+            if(e){
+                console.log(e)
+            }
+            cb()
+        })
+
     }
 };
